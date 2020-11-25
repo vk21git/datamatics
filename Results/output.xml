@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.5 on win32)" generated="20201125 14:57:13.661" rpa="false">
+<suite id="s1" name="TC1 GET Request" source="C:\development\robot-scripts\APIautomation\TestCases\TC1_GET_Request.robot">
+<test id="s1-t1" name="Verify details of get request api response">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>mysession</arg>
+<arg>${base_url}</arg>
+</arguments>
+<msg timestamp="20201125 14:57:13.951" level="INFO">Creating Session using : alias=mysession, url=http://api.openweathermap.org/data/2.5/forecast, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20201125 14:57:13.950" endtime="20201125 14:57:13.951"></status>
+</kw>
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>mysession</arg>
+<arg>?q=${city}${left_over_url}${api_id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20201125 14:57:14.286" level="INFO">GET Request : url=http://api.openweathermap.org/data/2.5/forecast/?q=Glasgow,uk&amp;units=metric&amp;appid=1b9a4cf6f5eecebb884e5b6e7144cb98 
+ path_url=/data/2.5/forecast/?q=Glasgow,uk&amp;units=metric&amp;appid=1b9a4cf6f5eecebb884e5b6e7144cb98 
+ headers={'User-Agent': 'python-requests/2.24.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20201125 14:57:14.287" level="INFO">GET Response : url=http://api.openweathermap.org/data/2.5/forecast/?q=Glasgow,uk&amp;units=metric&amp;appid=1b9a4cf6f5eecebb884e5b6e7144cb98 
+ status=200, reason=OK 
+ body={"cod":"200","message":0,"cnt":40,"list":[{"dt":1606305600,"main":{"temp":6.87,"feels_like":3.56,"temp_min":6.87,"temp_max":8.22,"pressure":1008,"sea_level":1008,"grnd_level":1005,"humidity":86,"temp_kf":-1.35},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],"clouds":{"all":63},"wind":{"speed":3.03,"deg":229},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2020-11-25 12:00:00"},{"dt":1606316400,"main":{"temp":7.05,"feels_like":4.32,"temp_min":7.05,"temp_max":7.45,"pressure":1010,"sea_level":1010,"grnd_level":1005,"humidity":85,"temp_kf":-0.4},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"clouds":{"all":25},"wind":{"speed":2.21,"deg":212},"visibility":10000,"pop":0.1,"sys":{"pod":"d"},"dt_txt":"2020-11-25 15:00:00"},{"dt":1606327200,"main":{"temp":5.51,"feels_like":2.97,"temp_min":5.51,"temp_max":5.51,"pressure":1012,"sea_level":1012,"grnd_level":1007,"humidity":89,"temp_kf":0},"weather":[{"id":801,"main":"Clouds","description":"few clouds","icon":"02n"}],"clouds":{"all":12},"wind":{"speed":1.7,"deg":206},"visibility":10000,"pop":0.1,"sys":{"pod":"n"},"dt_txt":"2020-11-25 18:00:00"},{"dt":1606338000,"main":{"temp":4.73,"feels_like":2.83,"temp_min":4.72,"temp_max":4.73,"pressure":1014,"sea_level":1014,"grnd_level":1009,"humidity":90,"temp_kf":0.01},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"clouds":{"all":1},"wind":{"speed":0.63,"deg":289},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2020-11-25 21:00:00"},{"dt":1606348800,"main":{"temp":4.21,"feels_like":2.11,"temp_min":4.21,"temp_max":4.21,"pressure":1016,"sea_level":1016,"grnd_level":1011,"humidity":90,"temp_kf":0},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"clouds":{"all":1},"wind":{"speed":0.79,"deg":274},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2020-11-26 00:00:00"},{"dt":1606359600,"main":{"temp":3.62,"feels_like":1.6,"temp_min":3.62,"temp_max":3.62,"pressure":1017,"sea_level":1017,"grnd_level":1012,"humidity":87,"temp_kf":0},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"clouds":{"all":1},"wind":{"speed":0.42,"deg":331},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2020-11-26 03:00:00"},{"dt":1606370400,"main":{"temp":3.12,"feels_like":1.1,"temp_min":3.12,"temp_max":3.12,"pressure":1018,"sea_level":1018,"grnd_level":1014,"humidity":87,"temp_kf":0},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01n"}],"clouds":{"all":4},"wind":{"speed":0.3,"deg":176},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2020-11-26 06:00:00"},{"dt":1606381200,"main":{"temp":3.08,"feels_like":0.92,"temp_min":3.08,"temp_max":3.08,"pressure":1019,"sea_level":1019,"grnd_level":1015,"humidity":87,"temp_kf":0},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"clouds":{"all":28},"wind":{"speed":0.49,"deg":208},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2020-11-26 09:00:00"},{"dt":1606392000,"main":{"temp":5.87,"feels_like":3.58,"temp_min":5.87,"temp_max":5.87,"pressure":1019,"sea_level":1019,"grnd_level":1015,"humidity":79,"temp_kf":0},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"clouds":{"all":42},"wind":{"speed":1,"deg":223},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2020-11-26 12:00:00"},{"dt":1606402800,"main":{"temp":5.15,"feels_like":2.53,"temp_min":5.15,"temp_max":5.15,"pressure":1019,"sea_level":1019,"grnd_level":1015,"humidity":88,"temp_kf":0},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"clouds":{"all":93},"wind":{"speed":1.68,"deg":235},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2020-11-26 15:00:00"},{"dt":1606413600,"main":{"temp":5.63,"feels_like":3,"temp_min":5.63,"temp_max":5.63,"pressure":1019,"sea_level":1019,"grnd_level":1014,"humidity":80,"temp_kf":0},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"clouds":{"all":93},"wind":{"speed":1.47,"deg":223},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2020-11-26 18:00:00"},{"dt":1606424400,"main":{"temp":5.47,"feels_like":2.46,"temp_min":5.47,"temp_max":5.47,"pressure":1020,"sea_level":1020,"grnd_level":1015,"humidity":78,"temp_kf":0},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"clouds":{"all":94},"wind":{"speed":1.89,"deg":221},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2020-11-26 21:00:00"},{"dt":1606435200,"main":{"temp":4.62,"feels_like":1.77,"temp_min":4.62,"temp_max":4.62,"pressure":1020,"sea_level":1020,"grnd_level":1015,"humidity":85,"temp_kf":0},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"clouds":{"all":86},"wind":{"speed":1.76,"deg":223},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2020-11-27 00:00:00"},{"dt":1606446000,"main":{"temp":4.33,"feels_like":1.42,"temp_min":4.33,"temp_max":4.33,"pressure":1019,"sea_level":1019,"grnd_level":1014,"humidity":85,"temp_kf":0},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04n"}],"clouds":{"all":71},"wind":{"speed":1.78,"deg":206},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2020-11-27 03:00:00"},{"dt":1606456800,"main":{"temp":3.85,"feels_like":0.92,"temp_min":3.85,"temp_max":3.85,"pressure":1019,"sea_level":1019,"grnd_level":1014,"humidity":85,"temp_kf":0},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}],"clouds":{"all":85},"wind":{"speed":1.7,"deg":198},"visibility":10000,"pop":0,"sys":{"pod":"n"},"dt_txt":"2020-11-27 06:00:00"},{"dt":1606467600,"main":{"temp":4.02,"feels_like":1.43,"temp_min":4.02,"temp_max":4.02,"pressure":1019,"sea_level":1019,"grnd_level":1014,"humidity":85,"temp_kf":0},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"clouds":{"all":100},"wind":{"speed":1.24,"deg":194},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2020-11-27 09:00:00"},{"dt":1606478400,"main":{"temp":5.96,"feels_like":3.55,"temp_min":5.96,"temp_max":5.96,"pressure":1019,"sea_level":1019,"grnd_level":1014,"humidity":78,"temp_kf":0},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"clouds":{"all":100},"wind":{"speed":1.15,"deg":191},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2020-11-27 12:00:00"},{"dt":1606489200,"main":{"temp":5.74,"feels_like":3.98,"temp_min":5.74,"temp_max":5.74,"pressure":1018,"sea_level":1018,"grnd_level":1013,"humidity":83,"temp_kf":0},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04d"}],"clouds":{"all":100},"wind":{"speed":0.39,"deg":217},"visibility":10000,"pop":0.04,"sys":{"pod":"d"},"dt_txt":"2020-11-27 15:00:00"},{"dt":1606500000,"main":{"temp":5.18,"feels_like":3.35,"temp_min":5.18,"temp_max":5.18,"pressure":1017,"sea_level":1017,"grnd_level":1013,"humidity":86,"temp_kf":0},"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10n"}],"clouds":{"all":98},"wind":{"speed":0.48,"deg":153},"visibility":10000,"pop":0.28,"rain":{"3h":0.31},"sys":{"pod":"n"},"dt_txt":"2020-11-27 18:00:00"},{"dt":1606510800,"main":{"temp":5.43,"feels_like":3.34,"temp_min":5.43,"temp_max":5.43,"pressure":1017,"sea_level":1017,"grnd_level":1012,"humidity":85,"temp_kf":0},"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10n"}],"clouds":{"all":100},"wind":{"speed":0.87,"deg":126},"visibility":10000,"pop":0.34,"rain":{"3h":0.27},"sys":{"pod":"n"},"dt_txt":"2020-11-27 21:00:00"},{"dt":1606521600,"main":{"temp":5.4,"feels_like":3.34,"temp_min":5.4,"temp_max":5.4,"pressure":1017,"sea_level":1017,"grnd_level":1012,"humidity":85,"temp_kf":0},"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10n"}],"clouds":{"all":100},"wind":{"speed":0.82,"deg":76},"visibility":10000,"pop":0.32,"rain":{"3h":0.15},"sys":{"pod":"n"},"dt_txt":"2020-11-28 00:00:00"},{"dt":1606532400,"main":{"temp":5.12,"feels_like":2.98,"temp_min":5.12,"temp_max":5.12,"pressure":1016,"sea_level":1016,"grnd_level":1012,"humidity":89,"temp_kf":0},"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10n"}],"clouds":{"all":100},"wind":{"speed":1.03,"deg":103},"visibility":10000,"pop":0.52,"rain":{"3h":0.95},"sys":{"pod":"n"},"dt_txt":"2020-11-28 03:00:00"},{"dt":1606543200,"main":{"temp":4.58,"feels_like":1.95,"temp_min":4.58,"temp_max":4.58,"pressure":1016,"sea_level":1016,"grnd_level":1012,"humidity":84,"temp_kf":0},"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10n"}],"clouds":{"all":100},"wind":{"speed":1.39,"deg":110},"visibility":10000,"pop":0.52,"rain":{"3h":0.16},"sys":{"pod":"n"},"dt_txt":"2020-11-28 06:00:00"},{"dt":1606554000,"main":{"temp":2.91,"feels_like":-0.03,"temp_min":2.91,"temp_max":2.91,"pressure":1017,"sea_level":1017,"grnd_level":1013,"humidity":85,"temp_kf":0},"weather":[{"id":803,"main":"Clouds","description":"broken clouds","icon":"04d"}],"clouds":{"all":70},"wind":{"speed":1.5,"deg":84},"visibility":10000,"pop":0.08,"sys":{"pod":"d"},"dt_txt":"2020-11-28 09:00:00"},{"dt":1606564800,"main":{"temp":4.69,"feels_like":1.79,"temp_min":4.69,"temp_max":4.69,"pressure":1018,"sea_level":1018,"grnd_level":1013,"humidity":77,"temp_kf":0},"weather":[{"id":802,"main":"Clouds","description":"scattered clouds","icon":"03d"}],"clouds":{"all":36},"wind":{"speed":1.52,"deg":60},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2020-11-28 12:00:00"},{"dt":1606575600,"main":{"temp":3.91,"feels_like":1.11,"temp_min":3.91,"temp_max":3.91,"pressure":1018,"sea_level":1018,"grnd_level":1013,"humidity":81,"temp_kf":0},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"clouds":{"all":0},"wind":{"speed":1.37,"deg":62},"visibility":10000,"pop":0,"sys":{"pod":"d"},"dt_txt":"2020-11-28 15:00:00"},{"dt":1606586400,"main":{"temp":2.11,"feels_like":-0.86,"temp_min":2.11,"temp_max":2.11,"pres... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20201125 14:57:14.288" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20201125 14:57:13.952" endtime="20201125 14:57:14.288"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20201125 14:57:14.289" endtime="20201125 14:57:14.291"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${status_code}</var>
+</assign>
+<msg timestamp="20201125 14:57:14.296" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20201125 14:57:14.292" endtime="20201125 14:57:14.296"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status_code}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20201125 14:57:14.297" endtime="20201125 14:57:14.298"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${body}</var>
+</assign>
+<msg timestamp="20201125 14:57:14.301" level="INFO">${body} = {"cod":"200","message":0,"cnt":40,"list":[{"dt":1606305600,"main":{"temp":6.87,"feels_like":3.56,"temp_min":6.87,"temp_max":8.22,"pressure":1008,"sea_level":1008,"grnd_level":1005,"humidity":86,"temp_...</msg>
+<status status="PASS" starttime="20201125 14:57:14.299" endtime="20201125 14:57:14.301"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${body}</arg>
+<arg>Glasgow</arg>
+</arguments>
+<status status="PASS" starttime="20201125 14:57:14.302" endtime="20201125 14:57:14.303"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+</arguments>
+<assign>
+<var>${contentTypeValue}</var>
+</assign>
+<msg timestamp="20201125 14:57:14.306" level="INFO">${contentTypeValue} = application/json; charset=utf-8</msg>
+<status status="PASS" starttime="20201125 14:57:14.304" endtime="20201125 14:57:14.306"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${contentTypeValue}</arg>
+<arg>application/json; charset=utf-8</arg>
+</arguments>
+<status status="PASS" starttime="20201125 14:57:14.307" endtime="20201125 14:57:14.308"></status>
+</kw>
+<tags>
+<tag>api</tag>
+</tags>
+<status status="PASS" starttime="20201125 14:57:13.949" endtime="20201125 14:57:14.310" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20201125 14:57:13.663" endtime="20201125 14:57:14.314"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">api</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="TC1 GET Request">TC1 GET Request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
